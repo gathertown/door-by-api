@@ -2,6 +2,10 @@
 
 Instantiated by the always handy [simple-react-full-stack](https://github.com/crsandeep/simple-react-full-stack)
 
+The code for the door in the [Gather office](https://staging.gather.town/app/oxrhEtb3sV7VutbQ/GatherOffice)
+
+A good example of editing the map using the API
+
 ## Quick Start
 
 ```bash
