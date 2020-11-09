@@ -24,7 +24,7 @@ const App = (props) => {
         <br />
         <br />
         <div>Otherwise, if you have the password, enter it here:</div>
-        <input placeholder="Super secret password" id="password"></input>
+        <input placeholder="Super secret password" id="password" type="password"></input>
         <button onClick={(e) => submitPassword(document.getElementById("password").value)}>Submit</button>
         { status ? <div>{status}</div> : null }
       </div>

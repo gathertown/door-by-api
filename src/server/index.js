@@ -32,14 +32,19 @@ app.get('/api/submitPassword', (req, res) => {
       if (object.x === DOOR_POS.x && object.y === DOOR_POS.y) {
         mapData.objects[idx].normal = DOOR_IMAGES.open;
         mapData.objects[idx].highlighted = DOOR_IMAGES.open;
+        oldMapData.objects[idx].normal = DOOR_IMAGES.closed;
+        oldMapData.objects[idx].highlighted = DOOR_IMAGES.closed_highlight;
       }
     }
 
     // Get rid of the impassable tile
     let buf = Uint8Array.from(Buffer.from(mapData.collisions, "base64"));
-    console.log(buf.length);
     buf[DOOR_POS.y * mapData.dimensions[0] + DOOR_POS.x] = 0x00;
     mapData.collisions = new Buffer(buf).toString("base64");
+
+    let oldBuf = Uint8Array.from(Buffer.from(oldMapData.collisions, "base64"));
+    oldBuf[DOOR_POS.y * oldMapData.dimensions[0] + DOOR_POS.x] = 0x01;
+    oldMapData.collisions = new Buffer(oldBuf).toString("base64");
 
     return axios.post("https://gather.town/api/setMap", {
       apiKey: API_KEY,
