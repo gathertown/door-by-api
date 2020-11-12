@@ -12,8 +12,11 @@ const App = (props) => {
     })
       .then(res => {
         console.log(setStatus(res.data.status));
+        window.localStorage.setItem("submission", password);
       })
   }
+
+  let defaultVal = window.localStorage.getItem("submission") ? window.localStorage.getItem("submission") : null;
 
   return (
     <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginTop: "20vh"}}>
@@ -24,7 +27,7 @@ const App = (props) => {
         <br />
         <br />
         <div>Otherwise, if you have the password, enter it here:</div>
-        <input placeholder="Super secret password" id="password" type="password"></input>
+        <input placeholder="Super secret password" id="password" type="password" defaultValue={defaultVal}></input>
         <button onClick={(e) => submitPassword(document.getElementById("password").value)}>Submit</button>
         { status ? <div>{status}</div> : null }
       </div>
