@@ -13,7 +13,7 @@
   "author": "Phillip Wang",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "express": "^4.16.3",
     "react": "^16.5.2",
