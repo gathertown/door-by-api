@@ -12,11 +12,16 @@ const App = (props) => {
     })
       .then(res => {
         console.log(setStatus(res.data.status));
-        window.localStorage.setItem("submission", password);
+        if (typeof window.localStorage !== "undefined") {
+          window.localStorage.setItem("submission", password);
+        }
       })
   }
 
-  let defaultVal = window.localStorage.getItem("submission") ? window.localStorage.getItem("submission") : null;
+  let defaultVal = null;
+  if (typeof window.localStorage !== 'undefined' && window.localStorage.getItem("submission")) {
+    defaultVal = window.localStorage.getItem("submission");
+  }
 
   return (
     <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginTop: "20vh"}}>
