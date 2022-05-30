@@ -1,7 +1,7 @@
 # ! UPDATE !
 
 We now have much better ways of doing this!
-Add a built-in password door like [this](https://gather.trydiscourse.com/t/looking-for-help-connecting-to-the-api-and-also-which-event-to-use-to-gate-access-to-a-room/31/14).
+Add a built-in password door like [this](https://support.gather.town/help/doors#:~:text=Choose%20Doors%20or%20Password%20Doors,or%20edit%20the%20door's%20password).
 Or use our [newer, better API](https://gathertown.notion.site/Gather-Websocket-API-bf2d5d4526db412590c3579c36141063) yourself.
 
 Leaving the rest of this README in place because it's still an example of how to cleverly use the http API and iFrames.
